@@ -1,0 +1,11 @@
+
+<%= simple_form_for(@bill_payment) do |f| %>
+
+
+  
+    <%= f.input :bill_amount %>
+    <%= f.input :bill_purpose %>
+    <%= f.association :group %>
+    <%= f.button :submit, class: "btn-primary"  %>
+    
+<% end %>
