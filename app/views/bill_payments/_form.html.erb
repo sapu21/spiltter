@@ -5,6 +5,7 @@
   
     <%= f.input :bill_amount %>
     <%= f.input :bill_purpose %>
+    <%= f.input :paid_by, collection: User.all, value_method: :name,label: "Paid by" %>
     <%= f.association :group %>
     <%= f.button :submit, class: "btn-primary"  %>
     

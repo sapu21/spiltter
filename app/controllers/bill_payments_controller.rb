@@ -69,6 +69,6 @@ class BillPaymentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bill_payment_params
-      params.require(:bill_payment).permit(:bill_amount, :group_id, :bill_purpose)
+      params.require(:bill_payment).permit(:bill_amount, :group_id, :bill_purpose, :paid_by )
     end
 end

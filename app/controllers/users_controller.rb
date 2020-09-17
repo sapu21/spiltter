@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :update_pending]
 
   # GET /users
   # GET /users.json
@@ -47,6 +47,17 @@ class UsersController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update_pending
+    @user.pending = false
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to bill_payments_path, notice: 'Cleared' }
+      else
+        format.html { redirect_to bill_payments_path, notice: 'Oops! there is some error' }
       end
     end
   end
