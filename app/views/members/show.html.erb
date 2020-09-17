@@ -2,12 +2,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @member.user %>
+  <%= @member.user.name %>
 </p>
 
 <p>
   <strong>Group:</strong>
-  <%= @member.group %>
+  <%= @member.group.name %>
 </p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
